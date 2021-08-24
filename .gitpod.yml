@@ -4,11 +4,11 @@ ports:
 
 tasks:
   - before: |
+      pip install -e .
       export FLASK_APP=flaskr
       export FLASK_ENV=development
       export PATH=$PATH:/home/gitpod/.local/bin
     init: |
-      pip install -e .
       flask init-db
     command: |
       flask run
